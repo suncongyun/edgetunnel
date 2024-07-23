@@ -10,7 +10,7 @@ let proxyIP = '';// 小白勿动，该地址并不影响你的网速，这是给
 
 let sub = '';// 留空则使用内置订阅
 let subconverter = 'subapi-loadbalancing.pages.dev';// clash订阅转换后端，目前使用CM的订阅转换功能。自带虚假uuid和host订阅。
-let subconfig = "https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online_Full_MultiMode.ini"; //订阅配置文件
+let subconfig = "https://raw.githubusercontent.com/suncongyun/scyyxip/main/SCY-ACL4SSR_Online_Full_MultiMode.ini"; //订阅配置文件
 let subProtocol = 'https';
 // The user name and password do not contain special characters
 // Setting the address will ignore proxyIP
@@ -123,10 +123,10 @@ export default {
 					if ((!sub || sub == '') && (addresses.length + addressesapi.length + addressesnotls.length + addressesnotlsapi.length + addressescsv.length) == 0){
 						if (request.headers.get('Host').includes(".workers.dev")) {
 							sub = 'workervless2sub-f1q.pages.dev'; 
-							subconfig = env.SUBCONFIG || 'https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online.ini';
+							subconfig = env.SUBCONFIG || 'https://raw.githubusercontent.com/suncongyun/scyyxip/main/SCY-ACL4SSR_Online_Full_MultiMode.ini';
 						} else {
 							sub = 'vless-4ca.pages.dev';
-							subconfig = env.SUBCONFIG || "https://raw.githubusercontent.com/cmliu/ACL4SSR/main/Clash/config/ACL4SSR_Online_Full_MultiMode.ini";
+							subconfig = env.SUBCONFIG || "https://raw.githubusercontent.com/suncongyun/scyyxip/main/SCY-ACL4SSR_Online_Full_MultiMode.ini";
 						}
 					}
 					const vlessConfig = await getVLESSConfig(userID, request.headers.get('Host'), sub, UA, RproxyIP, url);
